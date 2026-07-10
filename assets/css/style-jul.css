@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    color:#f63b79;
+    margin: 0;
+    padding: 20px;
+    background-image: url("/assets/images/1st/1st-bg.jpeg");
+}
+
+.imagem-canto {
+    position: fixed;
+    top: 20px;   
+    left: 30px;     
+    width: 50px;     
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;   
+    transition: transform 0.2s;
+}
+
+.imagem-canto:hover {
+    transform: scale(1.1); 
+}
+
+.div-central {
+    display: none; 
+    position: fixed;
+    top: 50%;      
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    
+    background-image: url('/assets/images/1st/card.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.9); 
+
+    border-radius: 28px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 1001; 
+    min-width: 350px;
+    min-height: 440px;
+    text-align: center;
+}
+
+.div-central.ativo {
+    display: block; 
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.btn-fechar:hover {
+    color: #333;
+}
+
+.opcoes-menu {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+
+.opcoes-menu a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.opcoes-menu a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.anchor-btn {
+    position: fixed;
+    TOP: 30px;
+    LEFt: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.anchor-btn:hover {
+    background: #ff6b9d;
+    color: white;
+    border-color: #ff6b9d;
+    transform: scale(1.15) translateX(5px);
+    box-shadow: 3px 3px 12px rgba(255, 107, 157, 0.5);
+}
+
+.anchor-btn:active {
+    transform: scale(0.95);
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.anchor-btn:hover .arrow {
+    transform: translateX(3px);
+}

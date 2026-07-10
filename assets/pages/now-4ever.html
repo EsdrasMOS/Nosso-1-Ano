@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agora e Para Sempre</title>
+    <link rel="stylesheet" href="/assets/css/now.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="lado-esquerdo">
+            <img id="anjos" src="/assets/images/now/right/anjos.png" onclick="mudaImg('/assets/images/now/left/anj.png', '/assets/musics/now/Venere Vai Venus - Anjos.mp3', '/assets/videos/video-1.mp4', 'tema-anjos')">
+            <img id="ipa" src="/assets/images/now/right/ipanemaa.png" onclick="mudaImg('/assets/images/now/left/ipa.png', '/assets/musics/now/Nikmouu - Ipanema.mp3', '/assets/videos/video-2.mp4', 'tema-ipanema')">
+            <img id="love" src="/assets/images/now/right/love.png" onclick="mudaImg('/assets/images/now/left/die.png', '/assets/musics/now/wave to earth - love.mp3', '/assets/videos/video-3.mp4', 'tema-love')">
+            
+            <video id="videoPlayer" controls autoplay loop style="display: none;">
+                <source src="" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="lado-direito">
+            <img id="base" src="/assets/images/now/left/base.png" alt="Imagem principal">
+        </div>
+    </div>
+
+    <audio id="audioPlayer" loop style="display: none;"></audio>
+    
+    <script lang="javascript">
+        function mudaImg(novaImg, music, video, tema) {
+            const base = document.getElementById('base');
+            const videoPlayer = document.getElementById('videoPlayer');
+            
+            base.style.opacity = '0';
+            
+            setTimeout(() => {
+                base.src = novaImg;
+                base.style.opacity = '1';
+            }, 300);
+
+            if (video) {
+                videoPlayer.src = video;
+                videoPlayer.style.display = 'block';
+                videoPlayer.load();
+            }
+
+            document.body.classList.remove('tema-anjos', 'tema-ipanema', 'tema-love');
+            if (tema) {
+                document.body.classList.add(tema);
+            }
+
+            const musicPath = music;
+            console.log('Tentando tocar:', musicPath);
+            
+            if (musicPath && audioPlayer) {
+                audioPlayer.src = musicPath;
+                audioPlayer.style.display = 'block';
+                
+                const playPromise = audioPlayer.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        console.log('Música tocando!');
+                    }).catch(error => {
+                        console.log('Erro ao reproduzir:', error);
+                    });
+                }
+            } else {
+                console.log('Música não encontrada para o índice:', indiceAtual);
+            }
+        }
+    </script>
+</body>
+</html>

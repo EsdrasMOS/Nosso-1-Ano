@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso 4º Trimestre</title>
+    <link rel="stylesheet" href="/assets/css/style-abr.css">
+</head>
+<body>
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="🔍 Clique para pesquisar..." readonly>
+            
+            <div class="options-dropdown" id="optionsDropdown">
+                <div class="option-item" onclick="selectOption('VMZ e Nikmouu - Ainda Te Amo', 'nature')">
+                    <span class="option-icon">🫶</span>
+                    <span>VMZ e Nikmouu - Ainda Te Amo</span>
+                </div>
+                <div class="option-item" onclick="selectOption('Bruno Mars - Risk It All', 'tech')">
+                    <span class="option-icon">😍</span>
+                    <span>Bruno Mars - Risk It All</span>
+                </div>
+                <div class="option-item" onclick="selectOption('Joji - Like You Do', 'music')">
+                    <span class="option-icon">👩‍❤️‍👨</span>
+                    <span>Joji - Like You Do</span>
+                </div>
+                <div class="option-item" onclick="selectOption('Wilian Nascimento - Era Você', 'travel')">
+                    <span class="option-icon">🫵</span>
+                    <span>Wilian Nascimento - Era Você</span>
+                </div>
+                <div class="option-item" onclick="selectOption('Cael Gomess - Louco por Você', 'food')">
+                    <span class="option-icon">😻</span>
+                    <span>Cael Gomess - Louco por Você</span>
+                </div>
+                <div class="option-item" onclick="selectOption('Cassiane - O Tempo Não Pode Apagar', 'art')">
+                    <span class="option-icon">💍</span>
+                    <span>Cassiane - O Tempo Não Pode Apagar</span>
+                </div>
+            </div>
+        </div>
+        
+        <div id="imagesContainer"></div>
+    </div>
+    
+    <audio id="audioPlayer" loop style="display: none;"></audio>
+
+    <a href="/assets/pages/now-4ever.html" class="anchor-btn" title="Próxima página"><span class="arrow">→</span></a>
+
+    <script lang="javascript" src="/assets/script.js"></script>
+</body>
+</html>

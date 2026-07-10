@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    background-image: url('/assets/images/before/base.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.music-button-wrapper {
+    position: absolute;
+}
+
+.music-btn {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    border-radius: 20px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.music-btn:hover {
+    background: #ff6b9d;
+    color: white;
+    border-color: #ff6b9d;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 8px rgba(255, 107, 157, 0.4);
+}
+
+.music-btn:active {
+    transform: scale(0.95);
+}
+
+.music-btn.playing {
+    background: #4caf50;
+    color: white;
+    border-color: #4caf50;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    }
+}
+
+.anchor-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.anchor-btn:hover {
+    background: #ff6b9d;
+    color: white;
+    border-color: #ff6b9d;
+    transform: scale(1.15) translateX(5px);
+    box-shadow: 3px 3px 12px rgba(255, 107, 157, 0.5);
+}
+
+.anchor-btn:active {
+    transform: scale(0.95);
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.anchor-btn:hover .arrow {
+    transform: translateX(3px);
+}

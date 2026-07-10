@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ffffff 0%, #eeeeee 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    padding-top: 20px;
+}
+
+#searchInput {
+    width: 400px;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    background: white;
+    color: #666;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#searchInput:hover:not(:disabled) {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
+}
+
+#searchInput:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.options-dropdown {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 400px;
+    overflow: hidden;
+    display: none;
+    z-index: 1000;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.option-item {
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option-item:last-child {
+    border-bottom: none;
+}
+
+.option-item:hover {
+    background: #f8f9ff;
+    padding-left: 30px;
+}
+
+.option-icon {
+    font-size: 20px;
+}
+
+#imagesContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.image-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.image-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.text-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+.text-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.big-text {
+    font-size: 8vw;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+    max-width: 90%;
+    line-height: 1.2;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 768px) {
+    #searchInput, .options-dropdown {
+        width: 90%;
+    }
+    
+    .big-text {
+        font-size: 12vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .big-text {
+        font-size: 14vw;
+    }
+}
+
+.anchor-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.anchor-btn:hover {
+    background: #ff6b9d;
+    color: white;
+    border-color: #ff6b9d;
+    transform: scale(1.15) translateX(5px);
+    box-shadow: 3px 3px 12px rgba(255, 107, 157, 0.5);
+}
+
+.anchor-btn:active {
+    transform: scale(0.95);
+}
+
+.arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.anchor-btn:hover .arrow {
+    transform: translateX(3px);
+}

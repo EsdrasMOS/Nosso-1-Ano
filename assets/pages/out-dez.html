@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso 2º Trimestre</title>
+    <link rel="stylesheet" href="/assets/css/style-out.css">
+</head>
+<body>
+
+    <img id="imagemClicavel" src="/assets/images/2nd/base.png" alt="" style="left:670px;display: flex; align-items: center; justify-content: center; position: absolute; width:550px; border-radius:80px; top:80px" class="imagem-trocavel">
+
+    <a href="/assets/pages/jan-mar.html" class="anchor-btn" title="Próxima página"><span class="arrow">→</span></a>
+
+    <audio id="audioPlayer" loop style="display: none;"></audio>
+
+    <script lang="javascript">
+const listaDeImagens = [
+    '/assets/images/2nd/apego.png',
+    '/assets/images/2nd/golden.png',
+    '/assets/images/2nd/her.png',
+    '/assets/images/2nd/luz.png',
+    '/assets/images/2nd/mares.png',
+    '/assets/images/2nd/when.png'
+];
+
+const musicasDatabase = [
+    '/assets/musics/2nd/Apego - Alec - Alec (youtube).mp3',
+    '/assets/musics/2nd/JVKE - golden hour (official music video) - JVKE (youtube).mp3', 
+    '/assets/musics/2nd/JVKE - her (official lyric video) - JVKE (youtube).mp3',
+    '/assets/musics/2nd/Miúcha, Antonio Carlos Jobim - Pela Luz dos Olhos Teus (Pseudo Vídeo) - MiuchaeTomJobimVEVO (youtube).mp3',
+    '/assets/musics/2nd/PEDRO VALENÇA E GABRIELA STEHLING - Tantos Mares (Vídeo Oficial) - Pedro Valença (youtube).mp3',
+    '/assets/musics/2nd/Bruno Mars - When I Was Your Man (Official Music Video) - Bruno Mars (youtube).mp3'
+];
+
+const coresDeFundo = [
+    '/assets/images/2nd/bg/alec.jpg',
+    '/assets/images/2nd/bg/hour.jpg',
+    '/assets/images/2nd/bg/ela.jpg',
+    '/assets/images/2nd/bg/olhos.jpg',
+    '/assets/images/2nd/bg/tantos.jpg',
+    '/assets/images/2nd/bg/mars.jpg'
+    ]
+
+let indiceAtual = 0;
+const imagemElemento = document.getElementById('imagemClicavel');
+
+if (imagemElemento) {
+    imagemElemento.addEventListener('click', function() {
+        indiceAtual++;
+        
+        if (indiceAtual >= listaDeImagens.length) {
+            indiceAtual = 0;
+        }
+        
+        imagemElemento.src = listaDeImagens[indiceAtual];
+
+        const musicPath = musicasDatabase[indiceAtual];
+        console.log('Tentando tocar:', musicPath);
+        
+        if (musicPath && audioPlayer) {
+            audioPlayer.src = musicPath;
+            audioPlayer.style.display = 'block';
+            
+            const playPromise = audioPlayer.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    console.log('Música tocando!');
+                }).catch(error => {
+                    console.log('Erro ao reproduzir:', error);
+                });
+            }
+        } else {
+            console.log('Música não encontrada para o índice:', indiceAtual);
+        }
+        const corAtual = coresDeFundo[indiceAtual];
+        if (corAtual) {
+            document.body.style.backgroundImage = `url(${corAtual})`;}
+    });
+    
+}
+    </script>
+</body>
+</html>
