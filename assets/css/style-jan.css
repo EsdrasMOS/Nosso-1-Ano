@@ -49,11 +49,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/assets/images/3rd/models/fichario.png'); /* Caminho da sua imagem */
-    background-size: cover;           /* Cobre toda a tela */
-    background-position: center;      /* Centraliza a imagem */
-    background-repeat: no-repeat;     /* Não repete a imagem */
-    background-attachment: fixed;     /* Fica fixa ao rolar a página */
+    background-image: url('./assets/images/3rd/models/fichario.png');
+    background-size: cover;         
+    background-position: center;      
+    background-repeat: no-repeat;     
+    background-attachment: fixed;    
     margin: 0;
     min-height: 100vh;
 

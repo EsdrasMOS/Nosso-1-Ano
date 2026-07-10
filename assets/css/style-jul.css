@@ -3,7 +3,7 @@ body {
     color:#f63b79;
     margin: 0;
     padding: 20px;
-    background-image: url("/assets/images/1st/1st-bg.jpeg");
+    background-image: url("./assets/images/1st/1st-bg.jpeg");
 }
 
 .imagem-canto {
@@ -30,7 +30,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); 
     
-    background-image: url('/assets/images/1st/card.png');
+    background-image: url('./assets/images/1st/card.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
