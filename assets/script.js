@@ -4,17 +4,16 @@ const imagesContainer = document.getElementById('imagesContainer');
 const audioPlayer = document.getElementById('audioPlayer');
 const clickableArea = document.getElementsByClassName('clickable-area');
 
-// ====== 2. Bancos de Dados ======
 const musicDatabase = {
-    'nature': './assets/musics/4th/nikmouu - Ainda te amo...Ft.VMZ.mp3',
-    'tech': './assets/musics/4th/Bruno Mars - Risk It All [Official Music Video].mp3',
-    'music': './assets/musics/4th/Joji - Like You Do.mp3',
-    'travel': './assets/musics/4th/Era Você.mp3',
-    'food': './assets/musics/4th/Louco por você.mp3',
-    'art': './assets/musics/4th/O Tempo Não Pode Apagar.mp3',
-    'culture': './assets/musics/before/BTS - BAEPSAE.mp3',
-    'fantasy': './assets/musics/before/Stephen Sanchez - Until I Found You.mp3',
-    'mystery': './assets/musics/before/Djavan - Samurai.mp3'
+    'nature': '../musics/4th/nikmouu - Ainda te amo...Ft.VMZ.mp3',
+    'tech': '../musics/4th/Bruno Mars - Risk It All [Official Music Video].mp3',
+    'music': '../musics/4th/Joji - Like You Do.mp3',
+    'travel': '../musics/4th/Era Você.mp3',
+    'food': '../musics/4th/Louco por você.mp3',
+    'art': '../musics/4th/O Tempo Não Pode Apagar.mp3',
+    'culture': '../musics/before/BTS - BAEPSAE.mp3',
+    'fantasy': '../musics/before/Stephen Sanchez - Until I Found You.mp3',
+    'mystery': '../musics/before/Djavan - Samurai.mp3'
 };
 
 const categoryColors = {
@@ -28,47 +27,47 @@ const categoryColors = {
 
 const imageDatabase = {
     nature: [
-        { url: './assets/images/4th/a1.jpeg', frase: 'SEU CHEIRO'},
-        { url: './assets/images/4th/a2.jpg' , frase: 'SEU CALOR'},
-        { url: './assets/images/4th/a3.jpg', frase: 'SEU BEIJO' },
-        { url: './assets/images/4th/a4.jpg', frase: 'SEU ABRAÇO' }
+        { url: '../images/4th/a1.jpeg', frase: 'SEU CHEIRO'},
+        { url: '../images/4th/a2.jpg' , frase: 'SEU CALOR'},
+        { url: '../images/4th/a3.jpg', frase: 'SEU BEIJO' },
+        { url: '../images/4th/a4.jpg', frase: 'SEU ABRAÇO' }
     ],
     tech: [
-        { url: './assets/images/4th/b1.jpg', frase: 'SEU CABELO' },
-        { url: './assets/images/4th/b2.jpg' , frase: 'SEU AFAGO'},
-        { url: './assets/images/4th/b3.jpg' , frase: 'SEUS OLHOS'},
-        { url: './assets/images/4th/b4.jpg' , frase: 'SEU CARINHO'}
+        { url: '../images/4th/b1.jpg', frase: 'SEU CABELO' },
+        { url: '../images/4th/b2.jpg' , frase: 'SEU AFAGO'},
+        { url: '../images/4th/b3.jpg' , frase: 'SEUS OLHOS'},
+        { url: '../images/4th/b4.jpg' , frase: 'SEU CARINHO'}
     ],
     music: [
-        { url: './assets/images/4th/c1.jpg', frase: 'SUAS MORDISCADAS' },
-        { url: './assets/images/4th/c2.jpg', frase: 'SUA RISADA'},
-        { url: './assets/images/4th/c3.jpg', frase: 'SUAS CÓCEGAS' },
-        { url: './assets/images/4th/c4.jpg', frase: 'SEU JEITO' }
+        { url: '../images/4th/c1.jpg', frase: 'SUAS MORDISCADAS' },
+        { url: '../images/4th/c2.jpg', frase: 'SUA RISADA'},
+        { url: '../images/4th/c3.jpg', frase: 'SUAS CÓCEGAS' },
+        { url: '../images/4th/c4.jpg', frase: 'SEU JEITO' }
     ],
     travel: [
-        { url: './assets/images/4th/d1.jpg', frase: 'SEU CARINHO' },
-        { url: './assets/images/4th/d2.jpg', frase: 'SUAS MÃOS' },
-        { url: './assets/images/4th/d3.jpg', frase: 'SEU APEGO' },
-        { url: './assets/images/4th/d4.jpg', frase: 'SEU SORRISO' }
+        { url: '../images/4th/d1.jpg', frase: 'SEU CARINHO' },
+        { url: '../images/4th/d2.jpg', frase: 'SUAS MÃOS' },
+        { url: '../images/4th/d3.jpg', frase: 'SEU APEGO' },
+        { url: '../images/4th/d4.jpg', frase: 'SEU SORRISO' }
     ],
     food: [
-        { url: './assets/images/4th/e1.jpg', frase: 'SUA FÉ' },
-        { url: './assets/images/4th/e2.jpg', frase: 'SUA INTELIGÊNCIA' },
-        { url: './assets/images/4th/e3.jpg', frase: 'SUA VOZ' },
-        { url: './assets/images/4th/e4.jpg', frase: 'SUAS PIADAS' }
+        { url: '../images/4th/e1.jpg', frase: 'SUA FÉ' },
+        { url: '../images/4th/e2.jpg', frase: 'SUA INTELIGÊNCIA' },
+        { url: '../images/4th/e3.jpg', frase: 'SUA VOZ' },
+        { url: '../images/4th/e4.jpg', frase: 'SUAS PIADAS' }
     ],
     art: [
-        { url: './assets/images/4th/f4.jpg', frase: 'SEU SER' },
-        { url: './assets/images/4th/f2.jpg', frase: 'SEU AMOR' },
-        { url: './assets/images/4th/f3.jpg', frase: 'SEU VOCÊ' },
-        { url: './assets/images/4th/f1.jpg', frase: 'SEU NÓS' }
+        { url: '../images/4th/f4.jpg', frase: 'SEU SER' },
+        { url: '../images/4th/f2.jpg', frase: 'SEU AMOR' },
+        { url: '../images/4th/f3.jpg', frase: 'SEU VOCÊ' },
+        { url: '../images/4th/f1.jpg', frase: 'SEU NÓS' }
     ]
 };
 
 const backgroundDatabase = {
-    'culture': "url('./assets/images/before/baepsae.png')",
-    'fantasy': "url('./assets/images/before/until.png')",
-    'mystery': "url('./assets/images/before/samurai.png')"
+    'culture': "url('../images/before/baepsae.png')",
+    'fantasy': "url('../images/before/until.png')",
+    'mystery': "url('../images/before/samurai.png')"
 };
 
 let currentCategory = 'nature';
@@ -219,12 +218,12 @@ function showBigText(frase, category) {
 }
 
 const listaDeImagens = [
-    './assets/images/2nd/apego.png',
-    './assets/images/2nd/golden.png',
-    './assets/images/2nd/her.png',
-    './assets/images/2nd/luz.png',
-    './assets/images/2nd/mares.png',
-    './assets/images/2nd/when.png'
+    './images/2nd/apego.png',
+    './images/2nd/golden.png',
+    './images/2nd/her.png',
+    './images/2nd/luz.png',
+    './images/2nd/mares.png',
+    './images/2nd/when.png'
 ];
 
 let indiceAtual = 0;
